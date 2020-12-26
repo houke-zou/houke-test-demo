@@ -7,7 +7,7 @@ package com.houke.demo.basic;
  * @description :
  */
 public class LogUtil {
-    protected void log(Object a) {
+    public static void log(Object a) {
         StackTraceElement element = Thread.currentThread().getStackTrace()[2];
         System.out.println(element.getClassName() + " - " + element.getMethodName() + " -  : " + a.toString());
     }
