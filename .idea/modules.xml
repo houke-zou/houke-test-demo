@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/houke-demo-basic/houke-demo-basic.iml" filepath="$PROJECT_DIR$/houke-demo-basic/houke-demo-basic.iml" />
+      <module fileurl="file://$PROJECT_DIR$/houke-demo-lamda/houke-demo-lamda.iml" filepath="$PROJECT_DIR$/houke-demo-lamda/houke-demo-lamda.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/houke-test-demo.iml" filepath="$PROJECT_DIR$/.idea/houke-test-demo.iml" />
+    </modules>
+  </component>
+</project>
