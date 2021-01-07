@@ -26,5 +26,6 @@ public class DomainService {
         System.out.println(c);
         System.out.println("do Something");
         System.out.println("---- 正式内容 ---- 结束 ----");
+        throw new RuntimeException();
     }
 }

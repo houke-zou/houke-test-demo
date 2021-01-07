@@ -11,7 +11,7 @@ import lombok.Data;
  */
 @Data
 @AllArgsConstructor
-public class DemoTestBean {
+public class Person {
     private Integer id;
     private String a;
     private String b;

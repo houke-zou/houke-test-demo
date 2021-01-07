@@ -90,9 +90,13 @@ public class SimpleAopHandler2Aspect {
         System.out.println(Arrays.deepToString(parameterAnnotations));
         System.out.println("method Method is "  + JSON.toJSONString(method));
 
+        Object proceed = null;
 
-
-        Object proceed = joinPoint.proceed();
+        try {
+            proceed = joinPoint.proceed();
+        } catch (Throwable throwable) {
+            System.out.println(throwable);
+        }
         return proceed;
     }
 }

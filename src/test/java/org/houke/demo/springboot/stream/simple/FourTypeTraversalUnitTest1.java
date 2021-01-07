@@ -1,12 +1,8 @@
 package org.houke.demo.springboot.stream.simple;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
 import org.junit.jupiter.api.Test;
-import org.springframework.context.annotation.Bean;
 
 import java.util.*;
-import java.util.stream.Stream;
 
 /**
  * @Program :        springboot-4test
@@ -30,7 +26,7 @@ public class FourTypeTraversalUnitTest1 extends TraversalUnitTest {
 
     @Test
     public void transversal() {
-        List<DemoTestBean> list = createOriginalList(10000000L);
+        List<Person> list = createOriginalList(10000000L);
         List<Long> res1 = new ArrayList<>();
         List<Long> res2 = new ArrayList<>();
         List<Long> res3 = new ArrayList<>();
@@ -52,15 +48,15 @@ public class FourTypeTraversalUnitTest1 extends TraversalUnitTest {
     }
 
     @Override
-    void doSomething(DemoTestBean demoTestBean) {
+    void doSomething(Person person) {
         String temp;
-        temp = demoTestBean.getA();
-        demoTestBean.setA(demoTestBean.getB());
-        demoTestBean.setB(demoTestBean.getC());
-        demoTestBean.setC(demoTestBean.getD());
-        demoTestBean.setD(demoTestBean.getE());
-        demoTestBean.setE(demoTestBean.getF());
-        demoTestBean.setF(temp);
-        demoTestBean.setRandom(a);
+        temp = person.getA();
+        person.setA(person.getB());
+        person.setB(person.getC());
+        person.setC(person.getD());
+        person.setD(person.getE());
+        person.setE(person.getF());
+        person.setF(temp);
+        person.setRandom(a);
     }
 }

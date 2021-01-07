@@ -1,13 +1,10 @@
 package org.houke.demo.springboot.stream.simple;
 
-import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
 import org.houke.demo.springboot.JavaBaseTest;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
-import java.util.stream.Stream;
 
 /**
  * @Program :        springboot-4test
@@ -25,20 +22,22 @@ public class FourTypeTraversalUnitTest2 extends JavaBaseTest {
      * 串行stream      41          474         2299
      * 并行stream      38          224         1057
      */
+    private int a = 13;
+
     @Test
     public void transversal() {
         long start = System.currentTimeMillis();
-        List<DemoTestBean> list = new ArrayList<>();
+        List<Person> list = new ArrayList<>();
         for (int i = 0; i < 5000000; i++) {
             Integer result = (int) (Math.random() * 100 + 1);
-            list.add(new DemoTestBean(1, "a", "b", "c", "d", "e", "f", result));
+            list.add(new Person(1, "a", "b", "c", "d", "e", "f", result));
         }
         long end = System.currentTimeMillis();
         log("the create time is :" + (end - start));
         start = System.currentTimeMillis();
         for (int i = 0; i < 5; i++) {
-            for (DemoTestBean demoTestBean : list) {
-                doSomething(demoTestBean);
+            for (Person person : list) {
+                doSomething(person);
             }
         }
         end = System.currentTimeMillis();
@@ -65,17 +64,15 @@ public class FourTypeTraversalUnitTest2 extends JavaBaseTest {
         log("the output of parallel stream for loop time is :" + (end - start));
     }
 
-    public void doSomething(DemoTestBean demoTestBean) {
+    public void doSomething(Person person) {
         String temp;
-        temp = demoTestBean.getA();
-        demoTestBean.setA(demoTestBean.getB());
-        demoTestBean.setB(demoTestBean.getC());
-        demoTestBean.setC(demoTestBean.getD());
-        demoTestBean.setD(demoTestBean.getE());
-        demoTestBean.setE(demoTestBean.getF());
-        demoTestBean.setF(temp);
-        demoTestBean.setRandom(a);
+        temp = person.getA();
+        person.setA(person.getB());
+        person.setB(person.getC());
+        person.setC(person.getD());
+        person.setD(person.getE());
+        person.setE(person.getF());
+        person.setF(temp);
+        person.setRandom(a);
     }
-
-    private int a = 13;
 }
